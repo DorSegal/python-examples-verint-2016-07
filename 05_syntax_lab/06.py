@@ -1,9 +1,19 @@
-"""
-Write a program that randomizes 2 numbers
-and calculates their least common multiplier,
-that is the smallest number that is divisable
-by both.
-For example if the numbers were 4 and 6,
-program should print 12
-"""
+from random import randint 
 
+num1=randint(1,10000)
+num2=randint(1,10000)
+
+if num1 > num2:
+    greater = num1
+else:
+    greater =num2
+
+while True:
+    if((greater % num1 == 0) and (greater % num2 == 0)):
+        lcm = greater
+        break
+    greater += 1
+
+print "First number is: ", num1
+print "Second number is: ", num2
+print "L.C.M: ", lcm
