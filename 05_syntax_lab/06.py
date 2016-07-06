@@ -1,18 +1,13 @@
 from random import randint 
 
-num1=randint(1,10000)
-num2=randint(1,10000)
-
-if num1 > num2:
-    greater = num1
-else:
-    greater =num2
-
+num1=randint(1,10)
+num2=randint(1,10)
+mul=1
 while True:
-    if((greater % num1 == 0) and (greater % num2 == 0)):
-        lcm = greater
+    if mul*num1 % num2 == 0:
+        lcm = mul*num1
         break
-    greater += 1
+    mul+=1
 
 print "First number is: ", num1
 print "Second number is: ", num2
