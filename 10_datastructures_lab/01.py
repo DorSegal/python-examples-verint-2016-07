@@ -1,10 +1,16 @@
-"""
-Write a program that takes two strings
-from the user and checks if they represent
-a valid user name.
-Valid users and passwords:
-    apple => red
-    lettuce => green
-    lemon => yellow
-    orange => orange
-"""
+import sys
+
+hostsfile = {}
+
+with open("hosts", "r") as fin:
+    for line in fin:
+       (name, ip) = line.split('=')
+       hostsfile[name] = ip
+
+
+for name in sys.argv[1:]:
+    try:
+        print "%s = %s" % (name, hostsfile[name])
+
+    except:
+        print "%s does not exist\n" % name
