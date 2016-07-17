@@ -5,3 +5,8 @@ Write a function that takes two arguments:
 If wrong types were passed in, raise an exception
 """
 
+def int_string(x, s):
+    if type(x) != int: raise ValueError('first must be int')
+    if type(s) != str: raise ValueError('second must be string')
+
+int_string("d", "dd")
