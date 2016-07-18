@@ -6,7 +6,7 @@ of the 10th digit from all arguments passed to it
 def asarotcount(*numbers):
     count = 0
     for num in numbers:
-        count += int(str(num)[-2])
+        if len(str(num)) > 1: count += int(str(num)[-2])
     return count
 
 
