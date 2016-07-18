@@ -7,4 +7,12 @@ For example:
     groupby(lambda s: s[0], ['foo', 'fi', 'hello', 'hi'])
     returns: { 'f': ['foo','fi'], 'h': ['hello', 'hi'] }
 """
+from collections import defaultdict
+def groupby(func, *words):
+    milon = defaultdict(list)
+    for word in words: milon[func(word)].append(word)
+    return milon
 
+
+# returns: { h: [‘hello’, ‘hi’, ‘help’, ‘here’], b: [‘bye’] }
+groupby(lambda(s): s[0], 'hello', 'hi', 'help', 'bye', 'here')
