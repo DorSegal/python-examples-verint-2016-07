@@ -13,3 +13,9 @@ Sample output:
     Hampton,Witt,witthampton@zaphire.com
     Grant,Morgan,morgangrant@lotron.com
 """
+import re
+
+with open("input.csv", "r") as csv:
+    for line in csv:
+        res = re.search(r'(\w+,)(\w+,)(.*)',line)
+        print res.group(2) + res.group(1) + res.group(3)
